@@ -174,7 +174,7 @@ function onBookingSubmit(e) {
   // ╔══════════════════════════════════════════════════╗
   // ║  Personalizza con il tuo indirizzo reale         ║
   // ╚══════════════════════════════════════════════════╝
-  const location = 'Via [Il Tuo Indirizzo], [Città]';
+  const location = 'Via Roma 11, Sandrigo 36066 (VI)';
 
   const params = new URLSearchParams({
     action:   'TEMPLATE',
