@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bramati Biomeccanica – Prenotazione online per analisi biomeccanica, bike fitting e meccanica bici professionale.">
+  <meta name="theme-color" content="#FFB300">
+  <title>Bramati | Biomeccanica &amp; Meccanica Bici</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <i class="fas fa-bicycle"></i>
+        <span>BRAMATI</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#servizi">Servizi</a></li>
+        <li><a href="#prenotazione">Prenota</a></li>
+        <li><a href="#dove-siamo">Dove Siamo</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+      <button class="btn-nav-cta" onclick="scrollToSection('prenotazione')">Prenota Ora</button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-lines"></div>
+    <div class="hero-content fade-in">
+      <span class="hero-badge"><i class="fas fa-award"></i> Professionisti del Ciclismo</span>
+      <h1 class="hero-title">
+        BIOMECCANICA<br>
+        <span class="accent">&amp;</span> MECCANICA BICI
+      </h1>
+      <p class="hero-subtitle">
+        Ottimizza la tua performance, previeni gli infortuni e mantieni la tua bici in perfette condizioni.
+        Expertise professionale al servizio del tuo ciclismo.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="scrollToSection('prenotazione')">
+          <i class="far fa-calendar-check"></i> Prenota un Appuntamento
+        </button>
+        <a href="#servizi" class="btn-outline">
+          <i class="fas fa-list-ul"></i> Scopri i Servizi
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ========== STATS BAR ========== -->
+  <section class="stats-bar">
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Clienti Soddisfatti</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Anni di Esperienza</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">1000+</span>
+        <span class="stat-label">Bici Revisionate</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">98%</span>
+        <span class="stat-label">Tasso di Soddisfazione</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section class="section services-section" id="servizi">
+    <div class="container">
+      <div class="section-header animate-up">
+        <span class="section-badge">Cosa Offriamo</span>
+        <h2 class="section-title">I Nostri Servizi</h2>
+        <p class="section-subtitle">Dalla biomeccanica alla meccanica, soluzioni complete per ogni ciclista</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card animate-up">
+          <div class="service-icon"><i class="fas fa-person-biking"></i></div>
+          <h3>Bike Fitting Completo</h3>
+          <p>Analisi biomeccanica completa con misurazione e regolazione di tutte le posizioni. Include analisi video e referto dettagliato.</p>
+          <div class="service-meta">
+            <span><i class="fas fa-clock"></i> 2–3 ore</span>
+          </div>
+          <button class="btn-service" onclick="selectService('Bike Fitting Completo')">
+            Prenota <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <div class="service-card featured animate-up">
+          <div class="featured-tag">Più Richiesto</div>
+          <div class="service-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Fitting Express</h3>
+          <p>Regolazione rapida per ciclisti con buona base. Ottimizzazione delle posizioni principali con analisi video essenziale.</p>
+          <div class="service-meta">
+            <span><i class="fas fa-clock"></i> 1–1,5 ore</span>
+          </div>
+          <button class="btn-service" onclick="selectService('Fitting Express')">
+            Prenota <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <div class="service-card animate-up">
+          <div class="service-icon"><i class="fas fa-user-doctor"></i></div>
+          <h3>Consulenza Posturale</h3>
+          <p>Valutazione posturale off-bike per prevenire infortuni. Analisi delle asimmetrie e piano di correzione personalizzato.</p>
+          <div class="service-meta">
+            <span><i class="fas fa-clock"></i> 1 ora</span>
+          </div>
+          <button class="btn-service" onclick="selectService('Consulenza Posturale')">
+            Prenota <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <div class="service-card animate-up">
+          <div class="service-icon"><i class="fas fa-wrench"></i></div>
+          <h3>Revisione Completa</h3>
+          <p>Controllo e manutenzione completa della bici: trasmissione, freni, ruote, telaio e tutti i componenti meccanici.</p>
+          <div class="service-meta">
+            <span><i class="fas fa-clock"></i> 2–4 ore</span>
+          </div>
+          <button class="btn-service" onclick="selectService('Revisione Completa Bici')">
+            Prenota <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <div class="service-card animate-up">
+          <div class="service-icon"><i class="fas fa-gears"></i></div>
+          <h3>Messa a Punto</h3>
+          <p>Regolazione precisa di cambio, freni e trasmissione. Ottimizzazione delle prestazioni meccaniche della tua bici.</p>
+          <div class="service-meta">
+            <span><i class="fas fa-clock"></i> 45–90 min</span>
+          </div>
+          <button class="btn-service" onclick="selectService('Messa a Punto')">
+            Prenota <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <div class="service-card animate-up">
+          <div class="service-icon"><i class="fas fa-toolbox"></i></div>
+          <h3>Montaggio Componenti</h3>
+          <p>Installazione professionale di nuovi componenti: gruppo, ruote, manubrio, forcella e molto altro.</p>
+          <div class="service-meta">
+            <span><i class="fas fa-clock"></i> Variabile</span>
+          </div>
+          <button class="btn-service" onclick="selectService('Montaggio Componenti')">
+            Prenota <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BOOKING ========== -->
+  <section class="section booking-section" id="prenotazione">
+    <div class="container">
+      <div class="section-header animate-up">
+        <span class="section-badge">Prenota Ora</span>
+        <h2 class="section-title">Prenota il Tuo Appuntamento</h2>
+        <p class="section-subtitle">Compila il modulo: l'evento verrà creato direttamente su Google Calendar e riceverai una conferma.</p>
+      </div>
+
+      <div class="booking-wrapper">
+
+        <!-- Form -->
+        <div class="booking-form-box animate-up">
+          <form id="bookingForm" novalidate>
+
+            <div class="form-group">
+              <label for="service">Servizio *</label>
+              <div class="select-wrap">
+                <select id="service" name="service" required>
+                  <option value="">— Seleziona un servizio —</option>
+                  <option value="Bike Fitting Completo">Bike Fitting Completo (2–3 ore)</option>
+                  <option value="Fitting Express">Fitting Express (1–1,5 ore)</option>
+                  <option value="Consulenza Posturale">Consulenza Posturale (1 ora)</option>
+                  <option value="Revisione Completa Bici">Revisione Completa Bici (2–4 ore)</option>
+                  <option value="Messa a Punto">Messa a Punto (45–90 min)</option>
+                  <option value="Montaggio Componenti">Montaggio Componenti</option>
+                </select>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome *</label>
+                <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+              </div>
+              <div class="form-group">
+                <label for="cognome">Cognome *</label>
+                <input type="text" id="cognome" name="cognome" placeholder="Il tuo cognome" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="nome@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="telefono">Telefono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+39 000 000 0000">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="data">Data *</label>
+                <div class="input-icon-wrap">
+                  <i class="fas fa-calendar-days"></i>
+                  <input type="text" id="data" name="data" placeholder="Seleziona data" readonly required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="orario">Orario *</label>
+                <div class="select-wrap">
+                  <select id="orario" name="orario" required>
+                    <option value="">— Seleziona orario —</option>
+                    <option value="09:00">09:00</option>
+                    <option value="09:30">09:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                    <option value="16:30">16:30</option>
+                    <option value="17:00">17:00</option>
+                  </select>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="note">Note Aggiuntive</label>
+              <textarea id="note" name="note" rows="3" placeholder="Tipo di bici, eventuali problemi, qualsiasi info utile..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="privacy" name="privacy" required>
+                <span class="checkbox-custom"></span>
+                Acconsento al trattamento dei dati personali per la gestione dell'appuntamento *
+              </label>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              <i class="fab fa-google"></i> Aggiungi a Google Calendar
+            </button>
+
+            <p class="form-note">
+              <i class="fas fa-info-circle"></i>
+              Si aprirà Google Calendar con tutti i dettagli pre-compilati. Salva l'evento e riceverai la conferma.
+            </p>
+          </form>
+
+          <!-- Success state -->
+          <div class="booking-success" id="bookingSuccess">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Ottimo! Appuntamento Creato</h3>
+            <p>Google Calendar è stato aperto con tutti i dettagli. Salva l'evento per confermare la prenotazione.</p>
+            <button onclick="resetForm()" class="btn-outline-dark">
+              <i class="fas fa-plus"></i> Prenota un Altro
+            </button>
+          </div>
+        </div>
+
+        <!-- Calendar embed -->
+        <div class="calendar-box animate-up">
+          <div class="calendar-box-header">
+            <h3><i class="fab fa-google" style="color:#4285F4"></i> Disponibilità</h3>
+            <p>Controlla i nostri slot liberi</p>
+          </div>
+          <!--
+            ╔══════════════════════════════════════════════════╗
+            ║  CONFIGURAZIONE GOOGLE CALENDAR                  ║
+            ╠══════════════════════════════════════════════════╣
+            ║  1. Vai su calendar.google.com                   ║
+            ║  2. Impostazioni > Il tuo calendario             ║
+            ║  3. "Integra il calendario"                      ║
+            ║  4. Copia il codice HTML embed                   ║
+            ║  5. Sostituisci il src dell'iframe qui sotto     ║
+            ╚══════════════════════════════════════════════════╝
+          -->
+          <div class="calendar-embed-wrap">
+            <iframe
+              id="gcalEmbed"
+              src="https://calendar.google.com/calendar/embed?src=TUO_CALENDAR_ID%40gmail.com&ctz=Europe%2FRome&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&mode=WEEK&bgcolor=%23141414&color=%23FFB300"
+              frameborder="0"
+              scrolling="no"
+              title="Calendario disponibilità">
+            </iframe>
+            <div class="calendar-placeholder" id="calPlaceholder">
+              <i class="fab fa-google"></i>
+              <strong>Calendario in Configurazione</strong>
+              <span>Sostituisci <code>TUO_CALENDAR_ID</code> nell'iframe per mostrare la disponibilità in tempo reale</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MAP ========== -->
+  <section class="section map-section" id="dove-siamo">
+    <div class="container">
+      <div class="section-header animate-up">
+        <span class="section-badge">Dove Siamo</span>
+        <h2 class="section-title">Trovaci Qui</h2>
+        <p class="section-subtitle">Vieni a trovarci nel nostro laboratorio</p>
+      </div>
+
+      <div class="location-wrapper animate-up">
+
+        <div class="location-info-card">
+          <div class="loc-item">
+            <div class="loc-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Indirizzo</h4>
+              <!-- Sostituisci con il tuo indirizzo -->
+              <p>Via [Il Tuo Indirizzo]<br>[Città], [CAP]</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <h4>Orari di Apertura</h4>
+              <p>Lun – Ven: 09:00 – 18:00<br>Sab: 09:00 – 13:00<br>Dom: Chiuso</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4>Telefono</h4>
+              <!-- Sostituisci con il tuo numero -->
+              <p>+39 000 000 0000</p>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <!-- Sostituisci con la tua email -->
+              <p>info@bramati.it</p>
+            </div>
+          </div>
+          <!-- Sostituisci l'href con il link Google Maps del tuo indirizzo -->
+          <a href="https://maps.google.com" target="_blank" class="btn-directions">
+            <i class="fas fa-directions"></i> Ottieni Indicazioni
+          </a>
+        </div>
+
+        <div class="map-embed-wrap">
+          <!--
+            ╔══════════════════════════════════════════════════╗
+            ║  CONFIGURAZIONE GOOGLE MAPS                      ║
+            ╠══════════════════════════════════════════════════╣
+            ║  1. Vai su maps.google.com                       ║
+            ║  2. Cerca il tuo indirizzo                       ║
+            ║  3. Condividi > Incorpora una mappa              ║
+            ║  4. Copia l'URL del src e incollalo qui sotto    ║
+            ╚══════════════════════════════════════════════════╝
+          -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796!2d10.9!3d44.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDM2JzAwLjAiTiAxMMKwNTQnMDAuMCJF!5e0!3m2!1sit!2sit!4v1234567890"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mappa sede Bramati Biomeccanica">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SOCIAL ========== -->
+  <section class="section social-section" id="contatti">
+    <div class="container">
+      <div class="section-header animate-up">
+        <span class="section-badge">Seguici</span>
+        <h2 class="section-title">Resta Connesso</h2>
+        <p class="section-subtitle">Seguici sui social per consigli, aggiornamenti e promozioni esclusive</p>
+      </div>
+
+      <div class="social-grid animate-up">
+
+        <!-- Sostituisci i link href con i tuoi profili reali -->
+        <a href="https://instagram.com/TUO_PROFILO" target="_blank" rel="noopener" class="social-card instagram">
+          <div class="social-card-icon"><i class="fab fa-instagram"></i></div>
+          <div class="social-card-body">
+            <h4>Instagram</h4>
+            <p>@bramati_bikes</p>
+            <span>Foto, storie e reels</span>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square social-ext"></i>
+        </a>
+
+        <a href="https://facebook.com/TUO_PROFILO" target="_blank" rel="noopener" class="social-card facebook">
+          <div class="social-card-icon"><i class="fab fa-facebook-f"></i></div>
+          <div class="social-card-body">
+            <h4>Facebook</h4>
+            <p>Bramati Biomeccanica</p>
+            <span>News e aggiornamenti</span>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square social-ext"></i>
+        </a>
+
+        <a href="https://youtube.com/@TUO_CANALE" target="_blank" rel="noopener" class="social-card youtube">
+          <div class="social-card-icon"><i class="fab fa-youtube"></i></div>
+          <div class="social-card-body">
+            <h4>YouTube</h4>
+            <p>Bramati Bikes</p>
+            <span>Tutorial e video guide</span>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square social-ext"></i>
+        </a>
+
+        <a href="https://tiktok.com/@TUO_PROFILO" target="_blank" rel="noopener" class="social-card tiktok">
+          <div class="social-card-icon"><i class="fab fa-tiktok"></i></div>
+          <div class="social-card-body">
+            <h4>TikTok</h4>
+            <p>@bramati_bikes</p>
+            <span>Video brevi e tips</span>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square social-ext"></i>
+        </a>
+
+        <a href="https://strava.com/clubs/TUO_CLUB" target="_blank" rel="noopener" class="social-card strava">
+          <div class="social-card-icon"><i class="fab fa-strava"></i></div>
+          <div class="social-card-body">
+            <h4>Strava</h4>
+            <p>Bramati Club</p>
+            <span>Attività e sfide</span>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square social-ext"></i>
+        </a>
+
+        <!-- Sostituisci 39000000000 con il tuo numero WhatsApp (prefisso IT senza +) -->
+        <a href="https://wa.me/39000000000?text=Ciao%2C%20vorrei%20prenotare%20un%20appuntamento" target="_blank" rel="noopener" class="social-card whatsapp">
+          <div class="social-card-icon"><i class="fab fa-whatsapp"></i></div>
+          <div class="social-card-body">
+            <h4>WhatsApp</h4>
+            <p>+39 000 000 0000</p>
+            <span>Contattaci direttamente</span>
+          </div>
+          <i class="fas fa-arrow-up-right-from-square social-ext"></i>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo"><i class="fas fa-bicycle"></i> BRAMATI</div>
+        <p>Biomeccanica &amp; Meccanica Bici<br>Esperienza professionale per ogni ciclista</p>
+        <div class="footer-social-icons">
+          <a href="https://instagram.com/TUO_PROFILO" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/TUO_PROFILO" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://youtube.com/@TUO_CANALE" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/39000000000" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Servizi</h4>
+        <ul>
+          <li><a href="#prenotazione" onclick="selectService('Bike Fitting Completo')">Bike Fitting Completo</a></li>
+          <li><a href="#prenotazione" onclick="selectService('Fitting Express')">Fitting Express</a></li>
+          <li><a href="#prenotazione" onclick="selectService('Consulenza Posturale')">Consulenza Posturale</a></li>
+          <li><a href="#prenotazione" onclick="selectService('Revisione Completa Bici')">Revisione Completa</a></li>
+          <li><a href="#prenotazione" onclick="selectService('Messa a Punto')">Messa a Punto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Link Rapidi</h4>
+        <ul>
+          <li><a href="#servizi">Servizi</a></li>
+          <li><a href="#prenotazione">Prenota</a></li>
+          <li><a href="#dove-siamo">Dove Siamo</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <ul class="footer-contact-list">
+          <li><i class="fas fa-map-marker-alt"></i> Via [Indirizzo], [Città]</li>
+          <li><i class="fas fa-phone"></i> +39 000 000 0000</li>
+          <li><i class="fas fa-envelope"></i> info@bramati.it</li>
+          <li><i class="fas fa-clock"></i> Lun–Ven 09:00–18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Bramati Biomeccanica &amp; Meccanica Bici — Tutti i diritti riservati</p>
+      <p>P.IVA: [Il Tuo Numero] &nbsp;|&nbsp; <a href="#">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <!-- ========== WhatsApp FAB ========== -->
+  <!-- Sostituisci 39000000000 con il tuo numero -->
+  <a href="https://wa.me/39000000000?text=Ciao%2C%20vorrei%20prenotare%20un%20appuntamento" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Contattaci su WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/it.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
