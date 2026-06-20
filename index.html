@@ -1168,7 +1168,7 @@
     };
 
     try {
-      await fetch('https://hook.eu1.make.com/nx589yjrahgfxsngkuphyxj0pdv9w46a', {
+      await fetch('https://hook.eu1.make.com/yra6wlh6u0bdkvesthq5ljqjxiag95vq', {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
@@ -1176,16 +1176,6 @@
       });
     } catch (e) {
       console.warn('Make webhook error:', e);
-    }
-    try {
-      await fetch('https://script.google.com/macros/s/AKfycbxOMSpXwPX08GpFkOi6qAABzReylSqGr5yu-piCdXHgSnBNe8DpHrOYmFRoKw2ePwo4/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ tipo: 'Ciclofficina', ...payload })
-      });
-    } catch (e) {
-      console.warn('Google Sheets webhook error:', e);
     }
 
     btn.textContent = 'CONFERMA PRENOTAZIONE';
@@ -1374,21 +1364,13 @@
     const code = document.getElementById('cancelCode').value.trim();
     closeCancelConfirm();
     try {
-      await fetch('https://hook.eu1.make.com/nx589yjrahgfxsngkuphyxj0pdv9w46a', {
+      await fetch('https://hook.eu1.make.com/yra6wlh6u0bdkvesthq5ljqjxiag95vq', {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ tipo: 'ANNULLAMENTO', telefono: tel, codice: code })
       });
     } catch(e) { console.warn('Make webhook error:', e); }
-    try {
-      await fetch('https://script.google.com/macros/s/AKfycbxOMSpXwPX08GpFkOi6qAABzReylSqGr5yu-piCdXHgSnBNe8DpHrOYmFRoKw2ePwo4/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ tipo: 'ANNULLAMENTO', telefono: tel, codice: code })
-      });
-    } catch(e) { console.warn('Google Sheets webhook error:', e); }
     document.getElementById('cancelTel').value = '';
     document.getElementById('cancelCode').value = '';
     document.getElementById('cancelSuccessOverlay').classList.add('show');
@@ -1525,21 +1507,13 @@
     btn.disabled = true;
     btn.textContent = 'INVIO IN CORSO...';
     try {
-      await fetch('https://hook.eu1.make.com/nx589yjrahgfxsngkuphyxj0pdv9w46a', {
+      await fetch('https://hook.eu1.make.com/yra6wlh6u0bdkvesthq5ljqjxiag95vq', {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ tipo: 'Biomeccanica', nome, cognome: cog, telefono: tel, email, servizi: servicesStr, data: formatDate(bioSelectedDate), data_iso: bioSelectedDate, orario: bioSelectedTime, bici, note })
       });
     } catch(e) { console.warn('Make webhook error:', e); }
-    try {
-      await fetch('https://script.google.com/macros/s/AKfycbxOMSpXwPX08GpFkOi6qAABzReylSqGr5yu-piCdXHgSnBNe8DpHrOYmFRoKw2ePwo4/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ tipo: 'Biomeccanica', nome, cognome: cog, telefono: tel, email, servizi: servicesStr, data: formatDate(bioSelectedDate), data_iso: bioSelectedDate, orario: bioSelectedTime, bici, note })
-      });
-    } catch(e) { console.warn('Google Sheets webhook error:', e); }
     btn.textContent = 'CONFERMA PRENOTAZIONE';
     document.getElementById('bioSuccessMsg').textContent = `Ciao ${nome}${cog ? ' ' + cog : ''}! La tua prenotazione per "${servicesStr}" il ${formatDate(bioSelectedDate)} alle ${bioSelectedTime} è stata ricevuta.`;
     document.getElementById('bioSuccessOverlay').classList.add('show');
