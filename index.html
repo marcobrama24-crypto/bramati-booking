@@ -1154,6 +1154,7 @@
     btn.textContent = 'INVIO IN CORSO...';
 
     const payload = {
+      tipo: 'Ciclofficina',
       nome,
       cognome: cog,
       telefono: tel,
@@ -1170,7 +1171,6 @@
     try {
       await fetch('https://hook.eu1.make.com/yra6wlh6u0bdkvesthq5ljqjxiag95vq', {
         method: 'POST',
-        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
@@ -1366,7 +1366,6 @@
     try {
       await fetch('https://hook.eu1.make.com/yra6wlh6u0bdkvesthq5ljqjxiag95vq', {
         method: 'POST',
-        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ tipo: 'ANNULLAMENTO', telefono: tel, codice: code })
       });
@@ -1509,7 +1508,6 @@
     try {
       await fetch('https://hook.eu1.make.com/yra6wlh6u0bdkvesthq5ljqjxiag95vq', {
         method: 'POST',
-        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ tipo: 'Biomeccanica', nome, cognome: cog, telefono: tel, email, servizi: servicesStr, data: formatDate(bioSelectedDate), data_iso: bioSelectedDate, orario: bioSelectedTime, bici, note })
       });
